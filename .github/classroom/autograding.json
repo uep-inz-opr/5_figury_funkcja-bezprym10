@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "test_prezka",
+      "setup": "",
+      "run": "python3 main.py",
+      "input": "5\r\n2\r\n4 6\r\n3 3.5 4\r\n8 2.1\r\n4.14",
+      "output": "112.3",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "test_zły",
+      "setup": "",
+      "run": "python3 main.py",
+      "input": "6\r\n1 2 3 4 5\r\n1 2\r\n3 4\r\n3 5\r\n6 4 1\r\n9",
+      "output": "Błąd: można podać maksymalnie 3 liczby",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 3
+    },
+    {
+      "name": "test_2",
+      "setup": "",
+      "run": "python3 main.py",
+      "input": "4\r\n3.09\r\n2 2\r\n3.09\r\n3.09",
+      "output": "^(93\\.99)|94\\.0|94",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 3
+    }
+  ]
+}
