@@ -1,6 +1,7 @@
 from cmath import sqrt
 import math
 
+
 def pole_kolo(x):
     wynik = math.pi * x[0] * x[0]
     return round(wynik, 2)
@@ -16,20 +17,17 @@ def pole_trojkat(x):
 
 def pole_figury(x):
     if len(x) == 1:
-        wynik = pole_kolo(x)
+        return pole_kolo(x)
     elif len(x) == 2:
-        wynik = pole_prostokat(x)
+        return pole_prostokat(x)
     elif len(x) == 3:
-        wynik = pole_trojkat(x)
-    else:
-        return "Błąd: można podać maksymalnie 3 liczby"
-    return wynik
+        return pole_trojkat(x)
 
 def suma_pol(lista_figur):
-    pole = 0
+    pole_cale = 0
     for figura_dane in lista_figur:
-        pole += pole_figury(figura_dane)
-    return pole
+        pole_cale += pole_figury(figura_dane)
+    return pole_cale
 
 def run():
     liczba_figur = int(input())
@@ -38,6 +36,8 @@ def run():
         figura_dane = input().strip().split(' ')
         for j in range(len(figura_dane)):
             figura_dane[j] = float(figura_dane[j])
+        if len(figura_dane) > 3:
+            return "Błąd: można podać maksymalnie 3 liczby"
         lista_figur.append(figura_dane)
     return suma_pol(lista_figur)
 
